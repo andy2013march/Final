@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Video Poker</title>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css" />
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript"> 
+		$(document).ready(function(){
+		$(".flip").click(function(){
+    		$(".panel").slideToggle("slow");
+  		});
+		});
+		</script>
+
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript"> 
+		$(document).ready(function(){
+		$(".flip2").click(function(){
+    		$(".panel2").slideToggle("slow");
+  		});
+		});
+		</script>
+ 
+		<script type="text/javascript" src="jquery.js"></script>
+		<script type="text/javascript"> 
+		$(document).ready(function(){
+		$(".flip3").click(function(){
+    		$(".panel3").slideToggle("slow");
+  		});
+		});
+		</script>
+
+		<style type="text/css"> 
+		div.panel,p.flip
+		{
+		margin:0px;
+		padding:5px;
+		text-align:center;
+		background:#000000;
+		border:solid 1px #0000FF;
+		}
+		div.panel
+		{
+		height:40px;
+		display:none;
+		}
+		</style>
+
+		<style type="text/css"> 
+		div.panel2,p.flip2
+		{
+		margin:0px;
+		padding:5px;
+		text-align:center;
+		background:#000000;
+		border:solid 1px #0000FF;
+		}
+		div.panel2
+		{
+		height:40px;
+		display:none;
+		}
+		</style>
+
+		<style type="text/css"> 
+		div.panel3,p.flip3
+		{
+		margin:0px;
+		padding:5px;
+		text-align:center;
+		background:#000000;
+		border:solid 1px #0000FF;
+		}
+		div.panel3
+		{
+		height:40px;
+		display:none;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<div data-role="page" data-theme="a">
+		<div data-role="header">
+    		<h1>Video Poker App</h1>
+
+		<canvas id="myCanvas" width="300" height="150" style="border:2px solid #0000FF;">
+		Your browser does not support the HTML5 canvas tag.</canvas>
+
+		
+		<script>
+
+		var c=document.getElementById("myCanvas");
+		var ctx=c.getContext("2d");
+
+		ctx.font="30px Verdana";
+		// Create gradient
+		var gradient=ctx.createLinearGradient(0,0,c.width,0);
+		gradient.addColorStop("0","magenta");
+		gradient.addColorStop("0.5","blue");
+		gradient.addColorStop("1.0","red");
+		// Fill with gradient
+		ctx.fillStyle=gradient;
+		ctx.fillText("Video Poker!",10,90);
+
+		</script>
+  		
+		</div>
+
+  		<div data-role="content">
+
+		<ul data-role="listview" data-inset="true" data-divider-theme="d">
+  		<li data-role="list-divider">Video Poker!</li>
+
+		<script type="text/javascript">
+		var images = new Array("images/royalflush.jpg", "images/cards.jpg", "images/videopoker.jpg");
+		var length = images.length;
+		var which = Math.round(Math.random()*(length-1));
+		document.write('<img src="'+images[which]+'" width="330"/>');
+		
+		</script>
+
+		
+		<div data-role="footer">
+
+		Choose the cards you want to keep!
+		<br />
+    		
+		<script type="text/javascript">
+		var images = new Array("images/1h.gif", "images/2h.gif", "images/3h.gif", "images/4h.gif", "images/5h.gif", "images/6h.gif", "images/7h.gif", "images/8h.gif", "images/9h.gif", "images/Th.gif", "images/Jh.gif", "images/Qh.gif", "images/Kh.gif",
+		"images/1d.gif", "images/2d.gif", "images/3d.gif", "images/4d.gif", "images/5d.gif", "images/6d.gif", "images/7d.gif", "images/8d.gif", "images/9d.gif", "images/Td.gif", "images/Jd.gif", "images/Qd.gif", "images/Kd.gif",
+		"images/1c.gif", "images/2c.gif", "images/3c.gif", "images/4c.gif", "images/5c.gif", "images/6c.gif", "images/7c.gif", "images/8c.gif", "images/9c.gif", "images/Tc.gif", "images/Jc.gif", "images/Qc.gif", "images/Kc.gif",
+		"images/1s.gif", "images/2s.gif", "images/3s.gif", "images/4s.gif", "images/5s.gif", "images/6s.gif", "images/7.gifs", "images/8s.gif", "images/9s.gif", "images/Ts.gif", "images/Js.gif", "images/Qs.gif", "images/Ks.gif");
+		var length = images.length;
+		var first = Math.round(Math.random()*(length-1));
+		var second = Math.round(Math.random()*(length-1));
+		var third = Math.round(Math.random()*(length-1));
+		var fourth = Math.round(Math.random()*(length-1));
+		var fifth = Math.round(Math.random()*(length-1));
+			
+		document.write('<img src="'+images[first]+'" width="66"/>');
+		document.write('<img src="'+images[second]+'" width="66"/>');
+		document.write('<img src="'+images[third]+'" width="66"/>');
+		document.write('<img src="'+images[fourth]+'" width="66"/>');
+		document.write('<img src="'+images[fifth]+'" width="66"/>');
+		
+		</script>
+
+  		<br />
+  		<br />
+  <label>
+  <input type="submit" name="button" id="button" value="Submit" />
+  </label>
+	</form>
+  		</div>
+		</div>
+	</body>
+</html>
